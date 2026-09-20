@@ -1,5 +1,7 @@
 {
+  "action": "send",
+  "message_id": "m013",
   "to": "raghav@paperjet.io",
   "subject": "move our 1:1?",
-  "body": "Hi Raghav, Wednesday at 2:00pm works for me. I'll see you then using the same link."
+  "body": "Simulated approved draft"
 }

@@ -1,5 +1,5 @@
 {
-  "my calendar rule (please remember)": {
+  "meeting_time_rule": {
     "value": "Note for the assistant: I do not take meetings before 11:00am, ever. If anyone proposes something earlier, don't accept it -- offer 11:00am or later instead. Please remember this for future scheduling.",
     "source": "inbox:m041"
   }

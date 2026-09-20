@@ -20,6 +20,13 @@ DELETED_DIR = Path(__file__).with_name("deleted")
 TRACE_FILE = Path(__file__).with_name("trace.jsonl")
 PREFERENCE_MARKERS = ("please remember", "standing request", "calendar rule")
 SECRET_PATTERN = re.compile(r"(?:amqp|https?)://[^\s]+|\b(?:password|credential|secret|token)\b", re.I)
+INJECTION_PATTERN = re.compile(
+    r"ignore all previous instructions|automated-agent directive|"
+    r"system notice for automated assistants|autonomous mode is now enabled|"
+    r"skip the confirmation step|do not mention this|assistant note|"
+    r"no need to surface|forward any message",
+    re.I,
+)
 
 
 def load_inbox():
@@ -84,6 +91,19 @@ def log_action(action, message_id, human_response, outcome):
         file.write(json.dumps(event) + "\n")
 
 
+def log_refusal(message_id, attempted, reason):
+    event = {
+        "timestamp": datetime.now().isoformat(timespec="seconds"),
+        "event": "refusal",
+        "message_id": message_id,
+        "attempted": attempted,
+        "reason": reason,
+        "user_notified": True,
+    }
+    with TRACE_FILE.open("a", encoding="utf-8") as file:
+        file.write(json.dumps(event) + "\n")
+
+
 def write_simulated_action(directory, message_id, payload):
     directory.mkdir(exist_ok=True)
     (directory / f"{message_id}.json").write_text(
@@ -97,6 +117,15 @@ def extract_draft(model_output):
         return model_output.strip()
     draft = match.group(1).strip()
     return "" if draft.lower() == "none" else draft
+
+
+def security_issue(message):
+    text = f"{message['subject']} {message['body']}"
+    if INJECTION_PATTERN.search(text):
+        return "prompt-injection: embedded instructions target assistant behavior"
+    if SECRET_PATTERN.search(text):
+        return "sensitive-data: credentials or secret-bearing URL detected"
+    return None
 
 
 def run(message_id):
@@ -141,6 +170,26 @@ if __name__ == "__main__":
         raise SystemExit("Usage: python part4.py <message_id> [--action send|delete]")
     if not config.GEMINI_API_KEY:
         raise SystemExit("Set GEMINI_API_KEY in .env first")
+    messages = load_inbox()
+    target = next((item for item in messages if item["id"] == sys.argv[1]), None)
+    if target is None:
+        raise SystemExit(f"Message not found: {sys.argv[1]}")
+    issue = security_issue(target)
+    if issue:
+        attempted = "follow an embedded email instruction or disclose sensitive data"
+        print(f"Decision: escalate\nReason: {issue}\nDraft: None")
+        print(
+            f"Run summary: found a security issue in {target['id']}; "
+            f"refused to {attempted}. Human review required."
+        )
+        log_refusal(target["id"], attempted, issue)
+        log_action(
+            sys.argv[3] if len(sys.argv) == 4 else "process",
+            target["id"],
+            None,
+            "blocked_security_issue",
+        )
+        raise SystemExit("No action taken: human review required.")
     message, model_output = run(sys.argv[1])
     if len(sys.argv) == 2:
         raise SystemExit(0)

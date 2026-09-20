@@ -63,7 +63,18 @@ The exact command, observable outcome and evidence for each is in
 `capabilities.sample.json`. That file is the machine-readable version and is what a
 marking script reads; this file is for a human. Keep the two in step.
 
+
+
 Part5 :
+
+Persistent preference demonstration: 
+=====================================
+
+The system records the preference from m041 that Sam does not accept meetings before 11:00 AM. After the process exits and restarts, it retrieves this preference from memory.json and applies it to m043, which proposes a Monday meeting at 9:00 AM; the system therefore does not accept 9:00 AM and suggests a time at or after 11:00 AM
+
+Part7 :
+======================================
+run the command "python demo.py --cap R6" to view the dashboard updated at dashboard.json/dashboard.html
 
 
 ## Final Report

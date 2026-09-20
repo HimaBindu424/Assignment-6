@@ -6,11 +6,25 @@ import re
 from datetime import datetime
 from pathlib import Path
 
+from memory import recall, remember
+from part4 import (
+    DELETED_DIR,
+    INJECTION_PATTERN,
+    OUTBOX_DIR,
+    TRACE_FILE as PART4_TRACE_FILE,
+    confirm,
+    log_action,
+    log_refusal,
+    write_simulated_action,
+)
+
 PROJECT_ROOT = Path(__file__).parent
 INBOX_FILE = PROJECT_ROOT / "inbox.json"
 DECISIONS_FILE = PROJECT_ROOT / "decisions.json"
 TRACE_FILE = PROJECT_ROOT / "trace.jsonl"
 DRAFT_FILE = PROJECT_ROOT / "draft.json"
+DASHBOARD_JSON = PROJECT_ROOT / "dashboard.json"
+DASHBOARD_HTML = PROJECT_ROOT / "dashboard.html"
 
 DISPOSITIONS = {"reply", "archive", "defer", "delegate", "escalate"}
 
@@ -43,6 +57,8 @@ COMMITMENT_SIGNALS = (
     "by monday",
     "by thursday",
     "please review",
+    "appointment",
+    "reply confirm",
     "can you approve",
     "could you confirm",
     "please confirm",
@@ -227,17 +243,174 @@ def run_r2(message_id):
     print(f"draft written: {DRAFT_FILE}")
 
 
+def run_r3(message_id, dry_run):
+    messages = load_inbox()
+    target = next((item for item in messages if item["id"] == message_id), None)
+    if target is None:
+        raise ValueError(f"Message not found: {message_id}")
+
+    proposal = {
+        "action": "send",
+        "message_id": message_id,
+        "to": target["from"],
+        "subject": target["subject"],
+        "body": "Simulated approved draft",
+    }
+    if dry_run:
+        print(json.dumps({"would_do": proposal, "outbox_writes": 0}, indent=2))
+        return
+
+    response = confirm("send", message_id)
+    if response.lower() == "y":
+        write_simulated_action(OUTBOX_DIR, message_id, proposal)
+        log_action("send", message_id, response, "written_to_outbox")
+        print(f"outbox/{message_id}.json written")
+    else:
+        log_action("send", message_id, response, "cancelled")
+        print("send cancelled; outbox writes: 0")
+
+
+def run_r4():
+    messages = load_inbox()
+    preference = next(
+        item for item in messages
+        if item["id"] == "m041"
+    )
+    result = remember(
+        "meeting_time_rule",
+        preference["body"],
+        "inbox:m041",
+    )
+    print("stored preference:")
+    print(json.dumps(result, indent=2))
+    print("restart demonstration: recall from a fresh process with `python demo.py --cap R4 --recall`")
+
+
+def run_r5():
+    flagged = []
+    for message in load_inbox():
+        text = f"{message['subject']} {message['body']}"
+        if INJECTION_PATTERN.search(text):
+            attempted = "follow an embedded email instruction or disclose sensitive data"
+            reason = "prompt-injection: embedded instructions target assistant behavior"
+            log_refusal(message["id"], attempted, reason)
+            flagged.append({
+                "message_id": message["id"],
+                "attempted": attempted,
+                "action": "not done; left in place",
+            })
+    for item in flagged:
+        print(
+            f"FLAGGED: {item['message_id']} attempted to {item['attempted']}; "
+            f"{item['action']}."
+        )
+    print(f"flagged: {len(flagged)}")
+
+
+def commitment_slot(message):
+    text = f"{message['subject']} {message['body']}"
+    time_match = re.search(r"\b(\d{1,2}:\d{2}\s*(?:am|pm))\b", text, re.I)
+    if not time_match:
+        return None
+    day_candidates = re.findall(
+        r"\b(\d{1,2})(?:st|nd|rd|th)?\b", text[:time_match.start()], re.I
+    )
+    if not day_candidates:
+        return None
+    day = int(day_candidates[-1])
+    time = time_match.group(1).replace(" ", "").lower()
+    return day, time
+
+
+def find_commitment_conflicts(commitments):
+    conflicts = []
+    for index, left in enumerate(commitments):
+        left_slot = commitment_slot(left)
+        if left_slot is None:
+            continue
+        for right in commitments[index + 1:]:
+            if left_slot == commitment_slot(right):
+                conflicts.append({
+                    "slot": {"day": left_slot[0], "time": left_slot[1]},
+                    "message_ids": [left["message_id"], right["message_id"]],
+                    "description": (
+                        f"CONFLICT: {left['message_id']} and {right['message_id']} "
+                        f"share day {left_slot[0]} at {left_slot[1]}"
+                    ),
+                })
+    return conflicts
+
+
+def run_r6():
+    messages = load_inbox()
+    commitments = [
+        {"message_id": message["id"], "subject": message["subject"], "body": message["body"]}
+        for message in messages
+        if contains_any(
+            f"{message['subject']} {message['body']}".casefold(),
+            COMMITMENT_SIGNALS,
+        )
+    ]
+    flagged = []
+    for message in messages:
+        if INJECTION_PATTERN.search(f"{message['subject']} {message['body']}"):
+            flagged.append(message["id"])
+            conflicts = find_commitment_conflicts(commitments)
+    pending = [
+        decision for decision in (classify(message) for message in messages)
+        if decision[0] in {"reply", "defer", "escalate"}
+    ]
+    dashboard = {
+        "pending_actions": pending,
+        "flagged": flagged,
+        "commitments": commitments,
+        "conflicts": conflicts,
+    }
+    DASHBOARD_JSON.write_text(json.dumps(dashboard, indent=2), encoding="utf-8")
+    DASHBOARD_HTML.write_text(
+        "<html><body><h1>InboxHero dashboard</h1>"
+        f"<h2>Pending actions</h2><pre>{json.dumps(pending, indent=2)}</pre>"
+        f"<h2>Flagged</h2><pre>{json.dumps(flagged, indent=2)}</pre>"
+        f"<h2>Commitments</h2><pre>{json.dumps(commitments, indent=2)}</pre>"
+        f"<h2>Conflicts</h2><pre>{json.dumps(conflicts, indent=2)}</pre>"
+        "</body></html>",
+        encoding="utf-8",
+    )
+    print(f"dashboard written: {DASHBOARD_HTML}")
+    print(f"dashboard data written: {DASHBOARD_JSON}")
+    for conflict in conflicts:
+        print(conflict["description"])
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--cap", required=True, choices=["R1", "R2"])
+    parser.add_argument("--cap", required=True, choices=["R1", "R2", "R3", "R4", "R5", "R6"])
     parser.add_argument("--msg", help="Message ID required for R2")
+    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--recall", action="store_true")
     args = parser.parse_args()
     if args.cap == "R1":
         run_r1()
     elif not args.msg:
-        parser.error("--msg is required for R2")
+        if args.cap == "R3":
+            run_r3("m013", args.dry_run)
+        elif args.cap == "R4" and args.recall:
+            print(json.dumps(recall("meeting"), indent=2))
+        elif args.cap == "R4":
+            run_r4()
+        elif args.cap == "R5":
+            run_r5()
+        elif args.cap == "R6":
+            run_r6()
+        else:
+            parser.error("--msg is required for R2")
     else:
-        run_r2(args.msg)
+        if args.cap == "R2":
+            run_r2(args.msg)
+        elif args.cap == "R3":
+            run_r3(args.msg, args.dry_run)
+        else:
+            parser.error("--msg is only supported for R2 and R3")
 
 
 if __name__ == "__main__":
