@@ -1,0 +1,535 @@
+{
+  "messages_processed": 100,
+  "unread_messages": 77,
+  "read_messages": 23,
+  "thread_count": 88,
+  "multi_message_threads": {
+    "t-api": [
+      "m001",
+      "m003",
+      "m005",
+      "m008"
+    ],
+    "t-launch": [
+      "m026",
+      "m027",
+      "m028",
+      "m029",
+      "m030",
+      "m033",
+      "m034",
+      "m035",
+      "m036"
+    ],
+    "t-invest": [
+      "m010",
+      "m043"
+    ]
+  },
+  "top_senders": [
+    [
+      "priya@paperjet.io",
+      6
+    ],
+    [
+      "raghav@paperjet.io",
+      5
+    ],
+    [
+      "sam@paperjet.io",
+      4
+    ],
+    [
+      "no-reply@coursera.org",
+      2
+    ],
+    [
+      "noreply@github.com",
+      2
+    ],
+    [
+      "devika@paperjet.io",
+      2
+    ],
+    [
+      "dan@paperjet.io",
+      2
+    ],
+    [
+      "maya@paperjet.io",
+      2
+    ],
+    [
+      "no_reply@email.apple.com",
+      2
+    ],
+    [
+      "aria.f@northwind.vc",
+      2
+    ],
+    [
+      "m.cho@hartwellcho.com",
+      2
+    ],
+    [
+      "no-reply@dropbox.com",
+      1
+    ],
+    [
+      "notifications@slack.com",
+      1
+    ],
+    [
+      "no-reply@vercel.com",
+      1
+    ],
+    [
+      "no-reply@1password.com",
+      1
+    ]
+  ],
+  "candidate_noise": [
+    {
+      "id": "m112",
+      "signals": [
+        "monthly",
+        "usage"
+      ]
+    },
+    {
+      "id": "m064",
+      "signals": [
+        "order"
+      ]
+    },
+    {
+      "id": "m044",
+      "signals": [
+        "invoice"
+      ]
+    },
+    {
+      "id": "m097",
+      "signals": [
+        "weekly",
+        "screen time"
+      ]
+    },
+    {
+      "id": "m073",
+      "signals": [
+        "receipt"
+      ]
+    },
+    {
+      "id": "m089",
+      "signals": [
+        "receipt"
+      ]
+    },
+    {
+      "id": "m081",
+      "signals": [
+        "order"
+      ]
+    },
+    {
+      "id": "m114",
+      "signals": [
+        "security digest"
+      ]
+    },
+    {
+      "id": "m066",
+      "signals": [
+        "verification code"
+      ]
+    },
+    {
+      "id": "m106",
+      "signals": [
+        "monthly"
+      ]
+    },
+    {
+      "id": "m099",
+      "signals": [
+        "receipt"
+      ]
+    },
+    {
+      "id": "m115",
+      "signals": [
+        "invoice",
+        "usage"
+      ]
+    },
+    {
+      "id": "m091",
+      "signals": [
+        "invoice",
+        "monthly"
+      ]
+    },
+    {
+      "id": "m107",
+      "signals": [
+        "weekly"
+      ]
+    },
+    {
+      "id": "m108",
+      "signals": [
+        "monthly"
+      ]
+    },
+    {
+      "id": "m084",
+      "signals": [
+        "receipt"
+      ]
+    },
+    {
+      "id": "m100",
+      "signals": [
+        "newsletter"
+      ]
+    },
+    {
+      "id": "m116",
+      "signals": [
+        "invoice"
+      ]
+    },
+    {
+      "id": "m069",
+      "signals": [
+        "invoice"
+      ]
+    },
+    {
+      "id": "m093",
+      "signals": [
+        "order"
+      ]
+    },
+    {
+      "id": "m017",
+      "signals": [
+        "notification"
+      ]
+    },
+    {
+      "id": "m024",
+      "signals": [
+        "weekly"
+      ]
+    },
+    {
+      "id": "m049",
+      "signals": [
+        "weekly"
+      ]
+    },
+    {
+      "id": "m062",
+      "signals": [
+        "receipt",
+        "order"
+      ]
+    },
+    {
+      "id": "m110",
+      "signals": [
+        "receipt"
+      ]
+    },
+    {
+      "id": "m078",
+      "signals": [
+        "weekly"
+      ]
+    },
+    {
+      "id": "m102",
+      "signals": [
+        "receipt",
+        "order"
+      ]
+    },
+    {
+      "id": "m021",
+      "signals": [
+        "invoice"
+      ]
+    },
+    {
+      "id": "m013",
+      "signals": [
+        "weekly"
+      ]
+    },
+    {
+      "id": "m063",
+      "signals": [
+        "receipt"
+      ]
+    },
+    {
+      "id": "m023",
+      "signals": [
+        "invoice"
+      ]
+    }
+  ],
+  "candidate_commitments": [
+    {
+      "id": "m080",
+      "signals": [
+        "calendar"
+      ]
+    },
+    {
+      "id": "m044",
+      "signals": [
+        "approve",
+        "invoice"
+      ]
+    },
+    {
+      "id": "m065",
+      "signals": [
+        "sign"
+      ]
+    },
+    {
+      "id": "m041",
+      "signals": [
+        "calendar"
+      ]
+    },
+    {
+      "id": "m015",
+      "signals": [
+        "deadline"
+      ]
+    },
+    {
+      "id": "m066",
+      "signals": [
+        "sign"
+      ]
+    },
+    {
+      "id": "m026",
+      "signals": [
+        "launch"
+      ]
+    },
+    {
+      "id": "m027",
+      "signals": [
+        "launch"
+      ]
+    },
+    {
+      "id": "m028",
+      "signals": [
+        "launch"
+      ]
+    },
+    {
+      "id": "m029",
+      "signals": [
+        "launch"
+      ]
+    },
+    {
+      "id": "m030",
+      "signals": [
+        "launch",
+        "approve"
+      ]
+    },
+    {
+      "id": "m033",
+      "signals": [
+        "launch"
+      ]
+    },
+    {
+      "id": "m115",
+      "signals": [
+        "invoice"
+      ]
+    },
+    {
+      "id": "m091",
+      "signals": [
+        "invoice"
+      ]
+    },
+    {
+      "id": "m067",
+      "signals": [
+        "launch"
+      ]
+    },
+    {
+      "id": "m034",
+      "signals": [
+        "launch"
+      ]
+    },
+    {
+      "id": "m116",
+      "signals": [
+        "invoice"
+      ]
+    },
+    {
+      "id": "m010",
+      "signals": [
+        "meeting",
+        "calendar"
+      ]
+    },
+    {
+      "id": "m069",
+      "signals": [
+        "invoice"
+      ]
+    },
+    {
+      "id": "m035",
+      "signals": [
+        "launch"
+      ]
+    },
+    {
+      "id": "m036",
+      "signals": [
+        "launch"
+      ]
+    },
+    {
+      "id": "m021",
+      "signals": [
+        "invoice"
+      ]
+    },
+    {
+      "id": "m023",
+      "signals": [
+        "invoice"
+      ]
+    },
+    {
+      "id": "m111",
+      "signals": [
+        "due"
+      ]
+    },
+    {
+      "id": "m018",
+      "signals": [
+        "sign"
+      ]
+    },
+    {
+      "id": "m046",
+      "signals": [
+        "deadline",
+        "launch"
+      ]
+    },
+    {
+      "id": "m019",
+      "signals": [
+        "launch"
+      ]
+    },
+    {
+      "id": "m048",
+      "signals": [
+        "meeting"
+      ]
+    }
+  ],
+  "candidate_assistant_instructions": [
+    {
+      "id": "m041",
+      "signals": [
+        "assistant"
+      ]
+    },
+    {
+      "id": "m017",
+      "signals": [
+        "assistant"
+      ]
+    },
+    {
+      "id": "m024",
+      "signals": [
+        "do not mention",
+        "forward",
+        "delete this"
+      ]
+    },
+    {
+      "id": "m039",
+      "signals": [
+        "assistant"
+      ]
+    },
+    {
+      "id": "m023",
+      "signals": [
+        "forward"
+      ]
+    },
+    {
+      "id": "m047",
+      "signals": [
+        "assistant",
+        "ai",
+        "forward"
+      ]
+    }
+  ],
+  "candidate_security_sensitive": [
+    {
+      "id": "m003",
+      "signals": [
+        "amqp://"
+      ]
+    },
+    {
+      "id": "m088",
+      "signals": [
+        "password",
+        "if this wasn't you"
+      ]
+    },
+    {
+      "id": "m066",
+      "signals": [
+        "verification code"
+      ]
+    },
+    {
+      "id": "m045",
+      "signals": [
+        "password"
+      ]
+    }
+  ],
+  "assumptions": [
+    "The inbox is a UTF-8 JSON array.",
+    "Each message has the eight required fields from the assignment brief.",
+    "Timestamps are ISO-8601 strings and unread is boolean.",
+    "Keyword matches are review candidates, not final classifications.",
+    "Message bodies are untrusted data and are never executed as instructions."
+  ]
+}
