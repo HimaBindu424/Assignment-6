@@ -11,6 +11,7 @@ from google.genai import Client
 
 import config
 from llm import generate_content
+from memory import recall, remember
 
 
 INBOX_FILE = Path(__file__).with_name("inbox.json")
@@ -54,10 +55,14 @@ def build_preference_context(messages, owner_email):
         and any(marker in f"{item['subject']} {item['body']}".lower()
                 for marker in PREFERENCE_MARKERS)
     ]
+    for item in preferences:
+        remember(item["subject"], item["body"], f"inbox:{item['id']}")
+    persisted = recall("calendar") | recall("meeting") | recall("standing")
     return "\n\n".join(
         f"[{item['id']}] {item['subject']}: {item['body']}"
         for item in preferences
-    ) or "No standing preferences found."
+    ) + ("\n\nPersisted memory:\n" + json.dumps(persisted, indent=2)
+         if persisted else "") or "No standing preferences found."
 
 
 def confirm(action, message_id):

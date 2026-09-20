@@ -119,3 +119,8 @@
 {"timestamp": "2026-09-20T13:58:21", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "n", "outcome": "cancelled"}
 {"timestamp": "2026-09-20T13:58:32", "event": "automatic_action", "action": "send", "message_id": "m103", "proposed": "send message m103", "human_response": null, "outcome": "blocked_no_draft"}
 {"timestamp": "2026-09-20T13:59:23", "event": "automatic_action", "action": "send", "message_id": "m079", "proposed": "send message m079", "human_response": null, "outcome": "blocked_no_draft"}
+{"timestamp": "2026-09-20T14:22:33", "cap": "R2", "event": "draft", "message_id": "m043", "read": ["m010"], "cited": []}
+{"timestamp": "2026-09-20T14:36:39", "cap": "R2", "event": "draft", "message_id": "m043", "read": ["m010"], "cited": []}
+{"timestamp": "2026-09-20T14:54:27", "event": "gated_decision", "action": "send", "message_id": "m043", "proposed": "send message m043", "human_response": "y", "outcome": "written_to_outbox"}
+{"timestamp": "2026-09-20T14:55:48", "event": "gated_decision", "action": "send", "message_id": "m043", "proposed": "send message m043", "human_response": "y", "outcome": "written_to_outbox"}
+{"timestamp": "2026-09-20T14:56:50", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "y", "outcome": "written_to_outbox"}
