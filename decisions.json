@@ -14,8 +14,8 @@
     "noise": 41,
     "request": 9,
     "security": 4,
-    "fallback": 32,
-    "commitment": 9,
+    "fallback": 31,
+    "commitment": 10,
     "hostile": 3,
     "financial-risk": 2
   },
@@ -413,8 +413,8 @@
     {
       "message_id": "m061",
       "disposition": "defer",
-      "reason": "No safe automatic action rule matched",
-      "rule": "fallback"
+      "reason": "Contains a meeting, deadline, approval, or confirmation request",
+      "rule": "commitment"
     },
     {
       "message_id": "m086",

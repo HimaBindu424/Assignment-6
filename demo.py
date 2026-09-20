@@ -3,7 +3,7 @@
 import argparse
 import json
 import re
-from datetime import datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 from memory import recall, remember
@@ -23,6 +23,8 @@ INBOX_FILE = PROJECT_ROOT / "inbox.json"
 DECISIONS_FILE = PROJECT_ROOT / "decisions.json"
 TRACE_FILE = PROJECT_ROOT / "trace.jsonl"
 DRAFT_FILE = PROJECT_ROOT / "draft.json"
+DEADLINES_FILE = PROJECT_ROOT / "deadlines.json"
+FOLLOWUPS_FILE = PROJECT_ROOT / "followups.json"
 DASHBOARD_JSON = PROJECT_ROOT / "dashboard.json"
 DASHBOARD_HTML = PROJECT_ROOT / "dashboard.html"
 
@@ -83,6 +85,18 @@ AUTOMATED_SENDER_MARKERS = (
     "alerts@",
     "invoice+",
 )
+USER_EMAIL = "sam@paperjet.io"
+
+MONTH_NAMES = "January|February|March|April|May|June|July|August|September|October|November|December"
+WEEKDAY_NAMES = "Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday"
+DEADLINE_PATTERN = re.compile(
+    rf"(?:by|before|deadline for|due)\s+(?P<value>"
+    rf"today|tomorrow|month-end|the\s+\d{{1,2}}(?:st|nd|rd|th)?|"
+    rf"(?:{MONTH_NAMES})\s+\d{{1,2}}(?:st|nd|rd|th)?|"
+    rf"(?:{WEEKDAY_NAMES})(?:\s+\d{{1,2}}(?::\d{{2}})?\s*(?:am|pm))?"
+    rf")",
+    re.IGNORECASE,
+)
 
 
 def load_inbox():
@@ -91,6 +105,146 @@ def load_inbox():
     if not isinstance(messages, list):
         raise ValueError("inbox.json must contain a JSON array")
     return messages
+
+
+def parse_deadline(value, message_date):
+    value = re.sub(r"\s+", " ", value.strip().casefold())
+    if value == "today":
+        return message_date
+    if value == "tomorrow":
+        return message_date + timedelta(days=1)
+    if value == "month-end":
+        next_month = message_date.replace(day=28) + timedelta(days=4)
+        return next_month - timedelta(days=next_month.day)
+
+    weekday = next(
+        (index for index, name in enumerate(WEEKDAY_NAMES.casefold().split("|"))
+         if value.startswith(name)),
+        None,
+    )
+    if weekday is not None:
+        days_ahead = (weekday - message_date.weekday()) % 7
+        return message_date + timedelta(days=days_ahead)
+
+    ordinal_match = re.search(r"(\d{1,2})", value)
+    if not ordinal_match:
+        return None
+    day = int(ordinal_match.group(1))
+    month_match = re.match(rf"({MONTH_NAMES})", value, re.IGNORECASE)
+    month = (
+        datetime.strptime(month_match.group(1), "%B").month
+        if month_match
+        else message_date.month
+    )
+    try:
+        return date(message_date.year, month, day)
+    except ValueError:
+        return None
+
+
+def extract_deadline(message):
+    text = f"{message['subject']} {message['body']}"
+    match = DEADLINE_PATTERN.search(text)
+    if not match:
+        return None
+    message_date = datetime.fromisoformat(message["timestamp"]).date()
+    deadline = parse_deadline(match.group("value"), message_date)
+    if deadline is None:
+        return None
+    return {
+        "message_id": message["id"],
+        "subject": message["subject"],
+        "deadline": deadline.isoformat(),
+        "deadline_text": match.group("value"),
+    }
+
+
+def run_x1(sender):
+    sender = sender.strip().casefold()
+    if not sender:
+        raise ValueError("--sender must not be empty")
+
+    unread_mail = [
+        {
+            "message_id": message["id"],
+            "from": message["from"],
+            "subject": message["subject"],
+            "timestamp": message["timestamp"],
+        }
+        for message in load_inbox()
+        if message["unread"] and message["from"].casefold() == sender
+    ]
+    result = {
+        "capability": "X1",
+        "sender": sender,
+        "unread_count": len(unread_mail),
+        "messages": unread_mail,
+    }
+    output_file = PROJECT_ROOT / "unread_mail.json"
+    output_file.write_text(json.dumps(result, indent=2), encoding="utf-8")
+    with TRACE_FILE.open("a", encoding="utf-8") as trace_file:
+        trace_file.write(json.dumps({
+            "timestamp": datetime.now().isoformat(timespec="seconds"),
+            "cap": "X1",
+            "event": "unread_mail_listed",
+            "sender": sender,
+            "message_ids": [item["message_id"] for item in unread_mail],
+        }) + "\n")
+    print(json.dumps(result, indent=2))
+    print(f"unread mail written: {output_file}")
+
+
+def run_x2(today_text=None):
+    as_of = date.fromisoformat(today_text) if today_text else date.today()
+    messages = load_inbox()
+    followups = []
+    for message in messages:
+        if message["from"].casefold() != USER_EMAIL or message["to"].casefold() == USER_EMAIL:
+            continue
+        sent_at = datetime.fromisoformat(message["timestamp"])
+        thread_messages = [
+            item for item in messages
+            if item["thread_id"] == message["thread_id"]
+            and datetime.fromisoformat(item["timestamp"]) > sent_at
+        ]
+        has_reply = any(
+            item["from"].casefold() != USER_EMAIL
+            for item in thread_messages
+        )
+        days_waiting = (as_of - sent_at.date()).days
+        if has_reply or days_waiting < 3:
+            continue
+        followups.append({
+            "message_id": message["id"],
+            "thread_id": message["thread_id"],
+            "to": message["to"],
+            "subject": message["subject"],
+            "days_waiting": days_waiting,
+            "draft": (
+                f"Hi,\n\nJust following up on my message about "
+                f"{message['subject'].removeprefix('Re: ')}. "
+                "Please let me know when you have a chance.\n\nThanks,\nSam"
+            ),
+        })
+
+    result = {
+        "capability": "X2",
+        "as_of": as_of.isoformat(),
+        "followups": followups,
+    }
+    FOLLOWUPS_FILE.write_text(json.dumps(result, indent=2), encoding="utf-8")
+    with TRACE_FILE.open("a", encoding="utf-8") as trace_file:
+        for followup in followups:
+            trace_file.write(json.dumps({
+                "timestamp": datetime.now().isoformat(timespec="seconds"),
+                "cap": "X2",
+                "event": "followup_drafted",
+                "message_id": followup["message_id"],
+                "thread_id": followup["thread_id"],
+                "days_waiting": followup["days_waiting"],
+            }) + "\n")
+    print(json.dumps(result, indent=2))
+    print(f"follow-ups written: {FOLLOWUPS_FILE}")
 
 
 def contains_any(text, signals):
@@ -382,14 +536,59 @@ def run_r6():
         print(conflict["description"])
 
 
+def run_x3(today_text=None):
+    as_of = date.fromisoformat(today_text) if today_text else date.today()
+    deadlines = []
+    for message in load_inbox():
+        deadline = extract_deadline(message)
+        if deadline is None:
+            continue
+        deadline_date = date.fromisoformat(deadline["deadline"])
+        deadline["status"] = (
+            "overdue"
+            if deadline_date < as_of
+            else "due_today"
+            if deadline_date == as_of
+            else "upcoming"
+        )
+        deadlines.append(deadline)
+
+    result = {
+        "capability": "X3",
+        "as_of": as_of.isoformat(),
+        "deadlines": deadlines,
+    }
+    DEADLINES_FILE.write_text(json.dumps(result, indent=2), encoding="utf-8")
+    with TRACE_FILE.open("a", encoding="utf-8") as trace_file:
+        for deadline in deadlines:
+            trace_file.write(json.dumps({
+                "timestamp": datetime.now().isoformat(timespec="seconds"),
+                "cap": "X3",
+                "event": "deadline_extracted",
+                **deadline,
+            }) + "\n")
+    print(json.dumps(result, indent=2))
+    print(f"deadlines written: {DEADLINES_FILE}")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--cap", required=True, choices=["R1", "R2", "R3", "R4", "R5", "R6"])
+    parser.add_argument(
+        "--cap",
+        required=True,
+        choices=["R1", "R2", "R3", "R4", "R5", "R6", "X1", "X2", "X3"],
+    )
     parser.add_argument("--msg", help="Message ID required for R2")
+    parser.add_argument("--sender", help="Sender address required for A1")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--recall", action="store_true")
+    parser.add_argument("--today", help="Reference date for X3, in YYYY-MM-DD format")
     args = parser.parse_args()
-    if args.cap == "R1":
+    if args.cap == "X1":
+        if not args.sender:
+            parser.error("--sender is required for A1")
+        run_x1(args.sender)
+    elif args.cap == "R1":
         run_r1()
     elif not args.msg:
         if args.cap == "R3":
@@ -402,6 +601,10 @@ def main():
             run_r5()
         elif args.cap == "R6":
             run_r6()
+        elif args.cap == "X2":
+            run_x2(args.today)
+        elif args.cap == "X3":
+            run_x3(args.today)
         else:
             parser.error("--msg is required for R2")
     else:

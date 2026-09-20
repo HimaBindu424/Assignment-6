@@ -1,141 +1,100 @@
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m096", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m072", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m001", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m003", "disposition": "escalate", "reason": "Security-sensitive content requires human review", "rule": "security"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m112", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m005", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m088", "disposition": "escalate", "reason": "Security-sensitive content requires human review", "rule": "security"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m064", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m104", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m080", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m044", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m097", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m073", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m113", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m089", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m065", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m008", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m105", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m081", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m041", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m098", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m074", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m015", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m114", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m090", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m066", "disposition": "escalate", "reason": "Security-sensitive content requires human review", "rule": "security"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m106", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m082", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m026", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m027", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m028", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m099", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m075", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m029", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m030", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m033", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m115", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m091", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m067", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m107", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m083", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m108", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m084", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m034", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m100", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m076", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m038", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m116", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m092", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m068", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m051", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m109", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m085", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m010", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m101", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m077", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m040", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m057", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m117", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m069", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m093", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m035", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m017", "disposition": "escalate", "reason": "Possible hostile instruction; requires human review", "rule": "hostile"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m024", "disposition": "escalate", "reason": "Possible hostile instruction; requires human review", "rule": "hostile"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m049", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m061", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m086", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m062", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m110", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m036", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m042", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m078", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m102", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m021", "disposition": "escalate", "reason": "Financial or social-engineering risk requires human review", "rule": "financial-risk"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m013", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m118", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m070", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m045", "disposition": "escalate", "reason": "Security-sensitive content requires human review", "rule": "security"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m094", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m059", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m012", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m039", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m053", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m087", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m063", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m023", "disposition": "escalate", "reason": "Financial or social-engineering risk requires human review", "rule": "financial-risk"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m111", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m018", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m016", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m046", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m019", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m043", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m103", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m079", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m048", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m047", "disposition": "escalate", "reason": "Possible hostile instruction; requires human review", "rule": "hostile"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m055", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m119", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m095", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T22:29:56", "cap": "R1", "event": "decision", "message_id": "m071", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
-{"timestamp": "2026-09-19T23:34:24", "cap": "R2", "event": "draft", "message_id": "m008", "read": ["m001", "m003", "m005"], "cited": ["m001", "m003", "m005"]}
-{"timestamp": "2026-09-19T23:35:22", "cap": "R2", "event": "draft", "message_id": "m008", "read": ["m001", "m003", "m005"], "cited": ["m001", "m003", "m005"]}
-{"timestamp": "2026-09-19T23:37:15", "cap": "R2", "event": "draft", "message_id": "m008", "read": ["m001", "m003", "m005"], "cited": ["m001", "m003", "m005"]}
-{"timestamp": "2026-09-19T23:37:47", "cap": "R2", "event": "draft", "message_id": "m008", "read": ["m001", "m003", "m005"], "cited": ["m001", "m003", "m005"]}
-{"timestamp": "2026-09-19T23:40:59", "cap": "R2", "event": "draft", "message_id": "m008", "read": ["m001", "m003", "m005"], "cited": ["m001", "m003", "m005"]}
-{"timestamp": "2026-09-19T23:41:12", "cap": "R2", "event": "draft", "message_id": "m008", "read": ["m001", "m003", "m005"], "cited": ["m001", "m003", "m005"]}
-{"timestamp": "2026-09-19T23:42:54", "cap": "R2", "event": "draft", "message_id": "m008", "read": ["m001", "m003", "m005"], "cited": ["m003"]}
-{"timestamp": "2026-09-19T23:44:07", "cap": "R2", "event": "draft", "message_id": "m012", "read": [], "cited": []}
-{"timestamp": "2026-09-19T23:44:26", "cap": "R2", "event": "draft", "message_id": "m043", "read": ["m010"], "cited": []}
-{"timestamp": "2026-09-19T23:44:34", "cap": "R2", "event": "draft", "message_id": "m030", "read": ["m026", "m027", "m028", "m029", "m033", "m034", "m035", "m036"], "cited": []}
-{"timestamp": "2026-09-19T23:44:43", "cap": "R2", "event": "draft", "message_id": "m008", "read": ["m001", "m003", "m005"], "cited": ["m003"]}
-{"timestamp": "2026-09-19T23:48:28", "cap": "R2", "event": "draft", "message_id": "m008", "read": ["m001", "m003", "m005"], "cited": ["m003"]}
-{"timestamp": "2026-09-20T09:51:28", "cap": "R2", "event": "draft", "message_id": "m008", "read": ["m001", "m003", "m005"], "cited": ["m003"]}
-{"timestamp": "2026-09-20T09:51:33", "cap": "R2", "event": "draft", "message_id": "m096", "read": [], "cited": []}
-{"timestamp": "2026-09-20T13:50:06", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "y", "outcome": "written_to_outbox"}
-{"timestamp": "2026-09-20T13:50:23", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "y", "outcome": "written_to_outbox"}
-{"timestamp": "2026-09-20T13:56:14", "cap": "R2", "event": "draft", "message_id": "m013", "read": [], "cited": []}
-{"timestamp": "2026-09-20T13:57:08", "cap": "R2", "event": "draft", "message_id": "m013", "read": [], "cited": []}
-{"timestamp": "2026-09-20T13:58:21", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "n", "outcome": "cancelled"}
-{"timestamp": "2026-09-20T13:58:32", "event": "automatic_action", "action": "send", "message_id": "m103", "proposed": "send message m103", "human_response": null, "outcome": "blocked_no_draft"}
-{"timestamp": "2026-09-20T13:59:23", "event": "automatic_action", "action": "send", "message_id": "m079", "proposed": "send message m079", "human_response": null, "outcome": "blocked_no_draft"}
-{"timestamp": "2026-09-20T14:22:33", "cap": "R2", "event": "draft", "message_id": "m043", "read": ["m010"], "cited": []}
-{"timestamp": "2026-09-20T14:36:39", "cap": "R2", "event": "draft", "message_id": "m043", "read": ["m010"], "cited": []}
-{"timestamp": "2026-09-20T14:54:27", "event": "gated_decision", "action": "send", "message_id": "m043", "proposed": "send message m043", "human_response": "y", "outcome": "written_to_outbox"}
-{"timestamp": "2026-09-20T14:55:48", "event": "gated_decision", "action": "send", "message_id": "m043", "proposed": "send message m043", "human_response": "y", "outcome": "written_to_outbox"}
-{"timestamp": "2026-09-20T14:56:50", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "y", "outcome": "written_to_outbox"}
-{"timestamp": "2026-09-20T15:23:28", "event": "automatic_action", "action": "send", "message_id": "m039", "proposed": "send message m039", "human_response": null, "outcome": "blocked_security_issue"}
-{"timestamp": "2026-09-20T15:23:52", "event": "automatic_action", "action": "send", "message_id": "m039", "proposed": "send message m039", "human_response": null, "outcome": "blocked_security_issue"}
-{"timestamp": "2026-09-20T15:24:10", "event": "automatic_action", "action": "send", "message_id": "m039", "proposed": "send message m039", "human_response": null, "outcome": "blocked_security_issue"}
-{"timestamp": "2026-09-20T15:24:48", "event": "automatic_action", "action": "send", "message_id": "m047", "proposed": "send message m047", "human_response": null, "outcome": "blocked_no_draft"}
-{"timestamp": "2026-09-20T15:25:28", "event": "automatic_action", "action": "send", "message_id": "m047", "proposed": "send message m047", "human_response": null, "outcome": "blocked_no_draft"}
-{"timestamp": "2026-09-20T15:27:06", "event": "automatic_action", "action": "send", "message_id": "m047", "proposed": "send message m047", "human_response": null, "outcome": "blocked_no_draft"}
-{"timestamp": "2026-09-20T15:28:54", "event": "refusal", "message_id": "m047", "attempted": "follow an embedded email instruction or disclose sensitive data", "reason": "prompt-injection: embedded instructions target assistant behavior", "user_notified": true}
-{"timestamp": "2026-09-20T15:28:54", "event": "automatic_action", "action": "send", "message_id": "m047", "proposed": "send message m047", "human_response": null, "outcome": "blocked_security_issue"}
-{"timestamp": "2026-09-20T15:30:25", "event": "gated_decision", "action": "send", "message_id": "m043", "proposed": "send message m043", "human_response": "y", "outcome": "written_to_outbox"}
-{"timestamp": "2026-09-20T15:36:29", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "y", "outcome": "written_to_outbox"}
-{"timestamp": "2026-09-20T15:36:59", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "y", "outcome": "written_to_outbox"}
-{"timestamp": "2026-09-20T16:06:02", "event": "refusal", "message_id": "m017", "attempted": "follow an embedded email instruction or disclose sensitive data", "reason": "prompt-injection: embedded instructions target assistant behavior", "user_notified": true}
-{"timestamp": "2026-09-20T16:06:02", "event": "refusal", "message_id": "m024", "attempted": "follow an embedded email instruction or disclose sensitive data", "reason": "prompt-injection: embedded instructions target assistant behavior", "user_notified": true}
-{"timestamp": "2026-09-20T16:06:02", "event": "refusal", "message_id": "m039", "attempted": "follow an embedded email instruction or disclose sensitive data", "reason": "prompt-injection: embedded instructions target assistant behavior", "user_notified": true}
-{"timestamp": "2026-09-20T16:06:02", "event": "refusal", "message_id": "m047", "attempted": "follow an embedded email instruction or disclose sensitive data", "reason": "prompt-injection: embedded instructions target assistant behavior", "user_notified": true}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m096", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m072", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m001", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m003", "disposition": "escalate", "reason": "Security-sensitive content requires human review", "rule": "security"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m112", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m005", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m088", "disposition": "escalate", "reason": "Security-sensitive content requires human review", "rule": "security"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m064", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m104", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m080", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m044", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m097", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m073", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m113", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m089", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m065", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m008", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m105", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m081", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m041", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m098", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m074", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m015", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m114", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m090", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m066", "disposition": "escalate", "reason": "Security-sensitive content requires human review", "rule": "security"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m106", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m082", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m026", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m027", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m028", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m099", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m075", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m029", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m030", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m033", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m115", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m091", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m067", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m107", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m083", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m108", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m084", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m034", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m100", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m076", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m038", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m116", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m092", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m068", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m051", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m109", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m085", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m010", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m101", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m077", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m040", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m057", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m117", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m069", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m093", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m035", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m017", "disposition": "escalate", "reason": "Possible hostile instruction; requires human review", "rule": "hostile"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m024", "disposition": "escalate", "reason": "Possible hostile instruction; requires human review", "rule": "hostile"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m049", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m061", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m086", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m062", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m110", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m036", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m042", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m078", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m102", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m021", "disposition": "escalate", "reason": "Financial or social-engineering risk requires human review", "rule": "financial-risk"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m013", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m118", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m070", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m045", "disposition": "escalate", "reason": "Security-sensitive content requires human review", "rule": "security"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m094", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m059", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m012", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m039", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m053", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m087", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m063", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m023", "disposition": "escalate", "reason": "Financial or social-engineering risk requires human review", "rule": "financial-risk"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m111", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m018", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m016", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m046", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m019", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m043", "disposition": "reply", "reason": "Direct request from a correspondent requires attention", "rule": "request"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m103", "disposition": "archive", "reason": "Automated notification, receipt, newsletter, or routine update", "rule": "noise"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m079", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m048", "disposition": "defer", "reason": "Contains a meeting, deadline, approval, or confirmation request", "rule": "commitment"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m047", "disposition": "escalate", "reason": "Possible hostile instruction; requires human review", "rule": "hostile"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m055", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m119", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m095", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m071", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}

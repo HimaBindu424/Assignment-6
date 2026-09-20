@@ -56,8 +56,9 @@ action log) is kept in small JSON files on disk.
 | R4 | Persistent preference | C | a stated preference survives a restart |
 | R5 | Refuse embedded instructions | C | detects, refuses, flags, reports injections |
 | R6 | Dashboard | C | three panes, commitments cited, conflicts surfaced |
-| X1 | Follow-up tracking | B | unanswered sent mail, with a drafted chase |
-| X2 | Morning digest | B | what needs me / what can wait / what was archived |
+| X1 | Unread mail by sender | A | lists all unread messages from a given sender |
+| X2 | Follow-up tracking | B | unanswered sent mail, with a drafted chase |
+| X3 | Automatic deadline tracker | C | extracts dated deadlines, classifies status, and cites source messages |
 
 The exact command, observable outcome and evidence for each is in
 `capabilities.sample.json`. That file is the machine-readable version and is what a
@@ -75,6 +76,20 @@ The system records the preference from m041 that Sam does not accept meetings be
 Part7 :
 ======================================
 run the command "python demo.py --cap R6" to view the dashboard updated at dashboard.json/dashboard.html
+
+Part8 :
+======================================
+run the command "python demo.py --cap X1 --sender raghav@paperjet.io" to list all unread
+mail from one sender. The tracker writes unread_mail.json and records an
+unread_mail_listed event in trace.jsonl. Sender matching is case-insensitive and an
+empty result is returned when that sender has no unread messages.
+
+run the command "python demo.py --cap X2 --today 2026-09-20" to find unanswered sent
+messages. The tracker writes followups.json and drafts a chase for messages waiting at
+least three days. It excludes threads that already have an inbound reply and records
+followup_drafted events in trace.jsonl.
+
+The deadline tracker is also available with "python demo.py --cap X3 --today 2026-09-20".
 
 
 ## Final Report

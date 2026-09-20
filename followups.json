@@ -1,0 +1,14 @@
+{
+  "capability": "X2",
+  "as_of": "2026-09-20",
+  "followups": [
+    {
+      "message_id": "m044",
+      "thread_id": "t-followup",
+      "to": "priya@paperjet.io",
+      "subject": "Re: contractor invoice approval",
+      "days_waiting": 18,
+      "draft": "Hi,\n\nJust following up on my message about contractor invoice approval. Please let me know when you have a chance.\n\nThanks,\nSam"
+    }
+  ]
+}

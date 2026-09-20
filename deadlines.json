@@ -1,0 +1,69 @@
+{
+  "capability": "X3",
+  "as_of": "2026-09-15",
+  "deadlines": [
+    {
+      "message_id": "m028",
+      "subject": "Re: Launch week -- kickoff",
+      "deadline": "2026-09-09",
+      "deadline_text": "Wednesday",
+      "status": "overdue"
+    },
+    {
+      "message_id": "m030",
+      "subject": "Re: Launch week -- kickoff",
+      "deadline": "2026-09-12",
+      "deadline_text": "the 12th",
+      "status": "overdue"
+    },
+    {
+      "message_id": "m117",
+      "subject": "Reminder: submit your timesheet",
+      "deadline": "2026-09-11",
+      "deadline_text": "Friday 5pm",
+      "status": "overdue"
+    },
+    {
+      "message_id": "m042",
+      "subject": "Backend role -- following up",
+      "deadline": "2026-09-19",
+      "deadline_text": "the 19th",
+      "status": "upcoming"
+    },
+    {
+      "message_id": "m111",
+      "subject": "Your Todoist daily digest",
+      "deadline": "2026-09-09",
+      "deadline_text": "today",
+      "status": "overdue"
+    },
+    {
+      "message_id": "m018",
+      "subject": "PaperJet -- SAFE amendment for signature",
+      "deadline": "2026-09-11",
+      "deadline_text": "Friday",
+      "status": "overdue"
+    },
+    {
+      "message_id": "m046",
+      "subject": "Quick question for our launch coverage",
+      "deadline": "2026-09-10",
+      "deadline_text": "Thursday",
+      "status": "overdue"
+    },
+    {
+      "message_id": "m048",
+      "subject": "PaperJet -- board minutes for review",
+      "deadline": "2026-09-14",
+      "deadline_text": "Monday",
+      "status": "overdue"
+    },
+    {
+      "message_id": "m055",
+      "subject": "PaperJet -- one more signature needed",
+      "deadline": "2026-09-30",
+      "deadline_text": "month-end",
+      "status": "upcoming"
+    }
+  ]
+}
