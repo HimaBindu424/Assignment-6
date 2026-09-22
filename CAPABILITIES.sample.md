@@ -92,6 +92,3 @@ followup_drafted events in trace.jsonl.
 The deadline tracker is also available with "python demo.py --cap X3 --today 2026-09-20".
 
 
-## Final Report
-
-*(Your four answers go here. Omitted from the sample.)*

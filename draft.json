@@ -1,9 +1,7 @@
 {
   "capability": "R2",
-  "message_id": "m043",
+  "message_id": "m013",
   "draft": null,
   "cited": [],
-  "read": [
-    "m010"
-  ]
+  "read": []
 }

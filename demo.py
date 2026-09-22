@@ -6,6 +6,7 @@ import re
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
+from main import create_client, process_email
 from memory import recall, remember
 from part4 import (
     DELETED_DIR,
@@ -403,20 +404,55 @@ def run_r3(message_id, dry_run):
     if target is None:
         raise ValueError(f"Message not found: {message_id}")
 
+    model_result = process_email(create_client(), message_id, messages)
+    if model_result["analysis"]["intent"] != "reply":
+        action = (
+            "Human review required"
+            if model_result["analysis"]["risk"] != "none"
+            else "No action needed"
+        )
+        print(json.dumps({
+            "message_id": message_id,
+            "analysis": model_result["analysis"],
+            "draft": None,
+            "action": action,
+            "outbox_writes": 0,
+        }, indent=2))
+        return
+    if not model_result["draft"]:
+        print(json.dumps({
+            "message_id": message_id,
+            "analysis": model_result["analysis"],
+            "draft": None,
+            "action": "Human review required",
+            "outbox_writes": 0,
+        }, indent=2))
+        return
+
     proposal = {
         "action": "send",
         "message_id": message_id,
         "to": target["from"],
         "subject": target["subject"],
-        "body": "Simulated approved draft",
+        "body": model_result["draft"],
     }
     if dry_run:
         print(json.dumps({"would_do": proposal, "outbox_writes": 0}, indent=2))
         return
 
+    print("proposed action:")
+    print(json.dumps(proposal, indent=2))
     response = confirm("send", message_id)
     if response.lower() == "y":
-        write_simulated_action(OUTBOX_DIR, message_id, proposal)
+        write_simulated_action(
+            OUTBOX_DIR,
+            message_id,
+            {
+                "to": proposal["to"],
+                "subject": proposal["subject"],
+                "body": proposal["body"],
+            },
+        )
         log_action("send", message_id, response, "written_to_outbox")
         print(f"outbox/{message_id}.json written")
     else:
@@ -592,7 +628,7 @@ def main():
         run_r1()
     elif not args.msg:
         if args.cap == "R3":
-            run_r3("m013", args.dry_run)
+            parser.error("--msg is required for R3")
         elif args.cap == "R4" and args.recall:
             print(json.dumps(recall("meeting"), indent=2))
         elif args.cap == "R4":

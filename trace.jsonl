@@ -98,3 +98,20 @@
 {"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m119", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
 {"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m095", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
 {"timestamp": "2026-09-20T21:43:57", "cap": "R1", "event": "decision", "message_id": "m071", "disposition": "defer", "reason": "No safe automatic action rule matched", "rule": "fallback"}
+{"timestamp": "2026-09-22T16:11:58", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "y", "outcome": "written_to_outbox"}
+{"timestamp": "2026-09-22T16:12:41", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "n", "outcome": "cancelled"}
+{"timestamp": "2026-09-22T16:12:50", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "y", "outcome": "written_to_outbox"}
+{"timestamp": "2026-09-22T16:14:30", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "n", "outcome": "cancelled"}
+{"timestamp": "2026-09-22T16:16:10", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "n", "outcome": "cancelled"}
+{"timestamp": "2026-09-22T16:16:31", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "y", "outcome": "written_to_outbox"}
+{"timestamp": "2026-09-22T16:32:13", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "y", "outcome": "written_to_outbox"}
+{"timestamp": "2026-09-22T16:32:35", "cap": "R2", "event": "draft", "message_id": "m013", "read": [], "cited": []}
+{"timestamp": "2026-09-22T16:35:16", "cap": "R2", "event": "draft", "message_id": "m013", "read": [], "cited": []}
+{"timestamp": "2026-09-22T16:35:30", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "n", "outcome": "cancelled"}
+{"timestamp": "2026-09-22T16:35:37", "event": "gated_decision", "action": "send", "message_id": "m013", "proposed": "send message m013", "human_response": "y", "outcome": "written_to_outbox"}
+{"timestamp": "2026-09-22T16:37:58", "event": "gated_decision", "action": "send", "message_id": "m001", "proposed": "send message m001", "human_response": "n", "outcome": "cancelled"}
+{"timestamp": "2026-09-22T16:43:32", "event": "gated_decision", "action": "send", "message_id": "m001", "proposed": "send message m001", "human_response": "y", "outcome": "written_to_outbox"}
+{"timestamp": "2026-09-22T16:44:32", "event": "gated_decision", "action": "send", "message_id": "m005", "proposed": "send message m005", "human_response": "n", "outcome": "cancelled"}
+{"timestamp": "2026-09-22T16:44:55", "event": "gated_decision", "action": "send", "message_id": "m112", "proposed": "send message m112", "human_response": "n", "outcome": "cancelled"}
+{"timestamp": "2026-09-22T16:55:53", "event": "gated_decision", "action": "send", "message_id": "m112", "proposed": "send message m112", "human_response": "n", "outcome": "cancelled"}
+{"timestamp": "2026-09-22T17:09:32", "event": "gated_decision", "action": "send", "message_id": "m015", "proposed": "send message m015", "human_response": "n", "outcome": "cancelled"}
