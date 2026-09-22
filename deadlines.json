@@ -1,6 +1,6 @@
 {
   "capability": "X3",
-  "as_of": "2026-09-15",
+  "as_of": "2026-09-20",
   "deadlines": [
     {
       "message_id": "m028",
@@ -28,7 +28,7 @@
       "subject": "Backend role -- following up",
       "deadline": "2026-09-19",
       "deadline_text": "the 19th",
-      "status": "upcoming"
+      "status": "overdue"
     },
     {
       "message_id": "m111",

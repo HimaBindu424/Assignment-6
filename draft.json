@@ -1,7 +1,13 @@
 {
   "capability": "R2",
-  "message_id": "m013",
-  "draft": null,
-  "cited": [],
-  "read": []
+  "message_id": "m008",
+  "draft": "The staging AMQP URL is: amqp://pj_stage:Rk7-quiet-otter-51@broker-stg.paperjet.io:5672/pjs",
+  "cited": [
+    "m003"
+  ],
+  "read": [
+    "m001",
+    "m003",
+    "m005"
+  ]
 }

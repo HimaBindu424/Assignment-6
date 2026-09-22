@@ -1,0 +1,117 @@
+{
+  "student": "M.HimaBindu",
+  "repo": "https://github.com/HimaBindu424/Assignment-6",
+  "system": {
+    "framework": "none",
+    "model": "gemini-3.5-flash-lite",
+    "messages_processed": 100,
+    "rule_handled": 100,
+    "dispositions": [
+      "reply",
+      "archive",
+      "defer",
+      "delegate",
+      "escalate"
+    ],
+    "retrieval": "thread-walk",
+    "irreversible": [
+      "send"
+    ],
+    "reversible": [
+      "draft",
+      "label",
+      "archive",
+      "defer",
+      "delete"
+    ],
+    "gate": "send",
+    "preference_demo": "m041: I do not take meetings before 11:00am, ever. If anyone proposes something earlier, don't accept it -- offer 11:00am or later instead. Please remember this for future scheduling."
+  },
+
+
+  "capabilities": [
+
+    {
+      "id": "R1",
+      "name": "Zero the inbox",
+      "tier": "B",
+      "claim": "Assigns every message exactly one disposition (reply/archive/defer/delegate/escalate) with a one-line reason, leaving none untouched.",
+      "command": "python demo.py --cap R1",
+      "observable": "Prints a table of all 24 messages, each with a disposition and reason, then the line 'undecided: 0'. Also writes decisions.json.",
+      "evidence": "trace.jsonl, events tagged cap=R1 (one 'decision' event per message id)"
+    },
+    {
+      "id": "R2",
+      "name": "Grounded reply",
+      "tier": "B",
+      "claim": "Drafts a reply that is grounded in a specific earlier message and records the message ids it drew on.",
+      "command": "python demo.py --cap R2 --msg m008",
+      "observable": "Prints a draft answering m008 that contains the staging URL from m003, plus a 'cited: [m003]' line. m003 really contains that URL.",
+      "evidence": "trace.jsonl, events tagged cap=R2 (a 'draft' event whose cited ids appear as earlier 'read' events)"
+    },
+    {
+      "id": "R3",
+      "name": "Gate the irreversible",
+      "tier": "C",
+      "claim": "Never sends or deletes without either per-action approval or an explicit --dry-run that shows what it would do.",
+      "command": "python demo.py --cap R3 --msg m010",
+      "observable": "Prints every send/delete it WOULD perform, then 'outbox/ writes: 0' because dry-run suppresses them. Re-running without --dry-run prompts y/n before each send.",
+      "evidence": "trace.jsonl, events tagged cap=R3 ('gate' events recording proposed action and decision)"
+    },
+    {
+      "id": "R4",
+      "name": "Persistent preference",
+      "tier": "C",
+      "claim": "Records a stated preference and retrieves it on a later run after the process has fully exited.",
+      "command": "python demo.py --cap R4",
+      "observable": "First invocation reads m041 and stores the preference 'I do not take meetings before 11:00am, ever. If anyone proposes something earlier, don't accept it -- offer 11:00am or later instead.' in memory.json. After the process exits, running `python demo.py --cap R4 --recall` starts a fresh process and retrieves the saved meeting preference.",
+      "evidence": "memory.json on disk between runs; console output from the --recall run"
+    },
+    {
+      "id": "R5",
+      "name": "Refuse embedded instructions",
+      "tier": "C",
+      "claim": "Detects instructions addressed to the assistant inside message bodies, refuses them, flags them, and reports them to the user.",
+      "command": "python demo.py --cap R5",
+      "observable": "Scans the inbox and flags m017, m024, m039, and m047 as messages containing instructions aimed at the assistant. It refuses to follow those instructions, leaves the messages in place, and writes no external action to outbox/.",
+      "evidence": "trace.jsonl, refusal events naming m017, m024, m039, and m047 with the attempted action and reason"
+    },
+    {
+      "id": "R6",
+      "name": "Dashboard",
+      "tier": "C",
+      "claim": "Generates a three-pane view (pending actions, flagged, commitments) reproducible from a run, with commitments cited to source messages and conflicts surfaced.",
+      "command": "python demo.py --cap R6; start dashboard.html",
+      "observable": "Writes dashboard.html and dashboard.json with pending actions, flagged messages, commitments, and conflicts. The run flags m017, m024, m039, and m047, and reports 'CONFLICT: m010 and m061 share day 15 at 3:00pm'.",
+      "evidence": "dashboard.html and dashboard.json containing the four panes and the conflict record"
+    },
+    {
+      "id": "X1",
+      "name": "Unread mail by sender",
+      "tier": "A",
+      "claim": "Lists all unread messages from a given sender using case-insensitive sender matching.",
+      "command": "python demo.py --cap X1 --sender raghav@paperjet.io",
+      "observable": "Prints and writes unread_mail.json with unread_count 5 and records for m001, m005, m029, m035, and m013 from raghav@paperjet.io. Sender matching is case-insensitive, and a sender with no unread mail returns an empty messages list.",
+      "evidence": "unread_mail.json; trace.jsonl event with cap=X1, event=unread_mail_listed, the normalized sender, and the returned message ids"
+    },    
+    {
+      "id": "X2",
+      "name": "Follow-up tracking",
+      "tier": "B",
+      "claim": "Finds messages I sent that nobody has answered in 3+ days, and drafts a chase for each.",
+      "command": "python demo.py --cap X2 --today 2026-09-20",
+      "observable": "Prints and writes followups.json with one follow-up for m044, which was sent to Priya and has been waiting 18 days as of 2026-09-20. The file includes its thread id, recipient, subject, waiting time, and a drafted chase; m003 is excluded because m005 replied in its thread.",
+      "evidence": "followups.json; trace.jsonl event(s) with cap=X2, event=followup_drafted, message_id, thread_id, and days_waiting"
+    },
+
+    {
+      "id": "X3",
+      "name": "Automatic deadline tracker",
+      "tier": "C",
+      "claim": "Extracts concrete deadlines from messages, classifies them as overdue, due today, or upcoming, and cites the source message.",
+      "command": "python demo.py --cap X3 --today 2026-09-20",
+      "observable": "Prints and writes deadlines.json with nine source-linked deadline records for 2026-09-20: eight overdue records for m028, m030, m117, m042, m111, m018, m046, and m048, plus the upcoming month-end deadline for m055 on 2026-09-30. Each record includes message_id, subject, deadline, deadline_text, and status.",
+      "evidence": "deadlines.json; trace.jsonl events with cap=X3 and event=deadline_extracted, including each source message_id and status"
+    }
+  ]
+}
